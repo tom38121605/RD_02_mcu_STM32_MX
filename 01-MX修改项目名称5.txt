@@ -1,0 +1,48 @@
+
+
+1. 建立一个文件夹，将此文件夹命名为新的工程名。如 d:\work27\ommcom
+2. 打开.ico文件， 点击file另存为工程到新建的文件夹中(d:\work27\ommcom)。（工程名称会自动修改： 如 prj1  修改为  ommocom）
+3. 拷贝原work18\prj中的core目录和driver目录到新目录work27\ommcom
+4. 打开 d:\work27\ommcom\ommocom.ico，点击create code按钮生成keil工程代码。
+
+5. 打开keil，修改相应的工程设置，如 勾选 reset and run
+5. 打开keil的工程设置，勾选microlib
+5. 打开keil的工程设置，编译优化选择Os
+
+5. 在keil中，添加include：   ...\core\drivefile\hfile
+5. 在keil的工程中，添加 "...\core\drivefile" 下面的.c文件到工程
+
+6. 打开 d:\work27\ommcom\ommocom.ico，选择cubeide，点击create code按钮生成cubeide工程代码。
+7. 在cubeide的魔法棒中，添加include：   ...\core\drivefile\hfile
+7. 在魔法棒中，"...\core\drivefile" 下面的.c文件会自动添加到工程 （不需要手动操作）
+7. 在魔法棒中，设置可生成hex文件，和bin文件
+
+8. 添加烧录工具到cubeide，如下：
+   C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeProgrammer\bin\STM32_Programmer_CLI.exe
+
+   ${workspace_loc:/ommocom/Release}
+   
+-c port=swd -w ommocom.hex -s 0x8000000 #L
+
+
+补充： 如果上传svn， 3个旧的keil工程名需要删除   （如果没有这3个文件，则忽略这一步）
+补充2： 考虑bootload的地址设置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
