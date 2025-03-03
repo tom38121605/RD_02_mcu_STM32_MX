@@ -3,11 +3,22 @@
 
 1. 在MX中修改MCU类型，方法一： import 法   （已验证，推荐，ok）
 
-   0). 预处理： 开始前，考虑把原来的其他mcu的工程的ico中的工程栏第二项修改成.c .h模式   
+   0). 预处理： 
+
+        。先把C031中所有引脚和功能，都调整到C011中完全有的，完全兼容      （详见本页最下面的说明）
+        。开始前，考虑把原工程的code generator的第一项修改成“copy  only the necessary library files   
+        。开始前，考虑把原工程的code generatord的第二项勾选.c .h模式   
+        。如果使用的是外部晶振，考虑把外部晶振HSE改成一致
+        。从新生成keil的代码，并编译ok
+
    1). 运行MX
    2). 选择新的MCU类型， STM32C011F6U6，create project生成新的工程
-   3). 点击菜单file\import，导入原来STM32C031中的ico文件    （事先把C031中所有引脚和功能，都调整到C011中完全有的，完全兼容）
+   3). 点击菜单file\import，导入原来STM32C031中的ico文件   
    3). 导入时跳出的2个界面，都选择默认，然后导入
+
+   4). 检查时钟是否跟原工程的一致 （有时导入时，时钟设置会变）
+       。如果是hse，则需手动勾选hse的选项
+       。外部晶振hse如果是8M，也要检查修改成8M
    4). 在Project Manager里 ，选择新的工程路径，输入新的工程名称，如i2c_mytest    (原来的名称是：I2C_TwoBoards )
    4). 在Project Manager里 ， .c, .h 选项，最好不要修改，跟原来保持一样
    5). 在MX中，选择熟悉的keil，点击Generate code

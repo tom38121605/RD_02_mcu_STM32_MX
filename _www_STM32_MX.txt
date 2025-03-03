@@ -1,0 +1,9 @@
+
+https://www.stmcu.com.cn/ecosystem/Cube/Cube-introduction?utm_source=baidu&utm_medium=cpc&utm_campaign=STM32Cube&utm_term=stm32%20cubemx     //stm32生态  （所有stm32开发软件）
+
+https://www.st.com/en/development-tools/stm32cubeprog.html         //stm32cubeprog
+
+安装后目录：
+"C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeMX\STM32CubeMX.exe"
+"C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeProgrammer\bin\STM32CubeProgrammer.exe"
+C:\ST\STM32CubeIDE_1.15.1\STM32CubeIDE\stm32cubeide.exe
