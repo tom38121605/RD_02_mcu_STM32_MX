@@ -1,0 +1,35 @@
+
+
+LED1:   PB6  -->  PB7       //把LED1从PB6移到PB7
+
+
+1. 右键PB6的引脚   -- 把LED1标签修改为LED1-OLD
+
+2. 左键PB7  --  设置为GPIO_Output  --  右键PB7的引脚   --  设置标签为LED1
+
+3. 在左边列表system Core  -- GPIO， 把PB7的参数设置同PB6一样,  如下：
+
+    GPIO output level:     low
+    GPIO mode        :      Output Push pull 
+    GPIO PULL         :      no pull
+    Max speed        :      low
+    Fast mode         :      disable
+
+4. 删除PB6引脚  （把PB6恢复到Reset State）
+
+5. ok
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
