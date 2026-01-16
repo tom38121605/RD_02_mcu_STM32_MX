@@ -1,0 +1,33 @@
+
+1.  点击keil工程下的ico文件，打开mx工程
+     。点击“Project Manager” --> 左边点击 project --  选择 “STM32CubeIDE"  -->  勾选”Generater under root“  -->  点击”GENERATER CODE"
+
+2. 点击刚生成的 .cproject 文件 -->  打开cubeide  --> 选择一个放 cubed目录 （如新建一个d：\testcube）
+
+3. 编译cube工程
+
+    。加入include路径  （可傻瓜式的加入项目下的所有含hfile的目录）
+    。如果某个不需要的c文件出现下面的错误提示， 就删除该文件如adc.c
+
+        ../Core/Inc/adc.h:35:8: error: unknown type name 'ADC_HandleTypeDef'
+           35 | extern ADC_HandleTypeDef hadc1;
+              |        ^~~~~~~~~~~~~~~~~
+
+            ../Core/Src/adc.c:27:1: error: unknown type name 'ADC_HandleTypeDef'; did you mean 'UART_HandleTypeDef'?
+           27 | ADC_HandleTypeDef hadc1;
+              | ^~~~~~~~~~~~~~~~~
+             | UART_HandleTypeDef
+
+4.  在魔法棒中，设置可生成hex文件
+
+     右键  -->  properties -->  c/c++ bulid  -->  setting  -->  选项卡 "tool setting" --> 点击 MCU Post build outputs --> 生成hex
+
+
+5. 烧录
+   菜单run --> run     （注意烧录器好像要stlink）
+
+
+
+
+
+

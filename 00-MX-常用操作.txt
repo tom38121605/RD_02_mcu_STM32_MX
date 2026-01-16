@@ -1,0 +1,8 @@
+
+
+1.  mx生成代码的设置
+
+     。点击keil工程下的ico文件，打开mx工程  --> 点击“Project Manager” --> 左边点击 code generate  
+        . 第一个框里，只选中间的“copy only the necessary library files”
+        . 第二个框里， 选择134， 只有第2项 “back previously..." 去掉勾选      
+
