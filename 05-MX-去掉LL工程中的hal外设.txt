@@ -1,0 +1,44 @@
+
+
+条件：  工程中所有的外设都是LL库， 只有uart2是hal库
+
+
+1.  点击keil工程下的ico文件，打开mx工程
+
+2.  把uart2的引脚设置为output或reset， 会自动disable 左边列表中community中的uart2
+
+3. 在create code里，选择 “MDK-ARM", 点击”generate“
+3. 在keil中， 一般编译都会通过，ok
+
+
+4. 但在原来已有的cube工程中， 编译出现很多个下面的错误提示
+
+   问题现象：
+         ../Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c0xx.h:197:11: fatal error: stm32c0xx_hal.h: No such file or directory
+
+        197 |  #include "stm32c0xx_hal.h"
+
+   分析： 是下面3句造成的 （但在魔法棒和程序中，都没有找到USE_HAL_DRIVER的定义）
+       #if defined (USE_HAL_DRIVER)
+ 
+       #include "stm32c0xx_hal.h"
+
+       #endif /* USE_HAL_DRIVER */
+
+   解决1： 注释 //--#include "stm32c0xx_hal.h"
+
+
+   解决2： 在魔法棒  Project Properties → C/C++ Build → Settings → Tool Settings → MCU GCC Compiler →Preprocessor中，
+              。 加入USE_HAL_DRIVER  -- Apply and close
+              。 再在同样的地方删除 USE_HAL_DRIVER  -- Apply and close
+              。 再编译，竟然ok   （待理解  -- 或许这样会消除其某种错误的记忆？）
+
+
+
+
+
+
+
+
+
+
