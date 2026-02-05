@@ -1,0 +1,17 @@
+
+1.  点击cube工程下的ico文件，打开mx工程
+     。点击“Project Manager” --> 左边点击 project --  选择 “MDK-ARM"  -->   点击”GENERATER CODE"
+ 
+2. 打开和编译KEIL工程，出现下面问题 （mcp3561_init函数没有定义）
+       adcsensor\adcsensor.axf: Error: L6218E: Undefined symbol mcp3561_init (referred from main.o).
+
+   解决:  在keil工程中，加入 mcp3561.c文件， 即编译ok
+
+
+
+
+
+
+
+
+
